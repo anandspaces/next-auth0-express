@@ -19,7 +19,6 @@ app.post('/auth/callback', async (req, res) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log("response:",response);
 
     if (!response.ok) {
       return res.status(401).json({ error: 'Invalid token' });
