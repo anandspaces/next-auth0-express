@@ -23,7 +23,20 @@ root/
 ```
 
 ---
+## Auth0 Configuration
 
+1. Go to [Auth0 Dashboard](https://manage.auth0.com/)
+2. Create a new **Application** → **Single Page Web App**
+3. Set the following:
+   - **Allowed Callback URLs**: `http://localhost:3000/callback`
+   - **Allowed Logout URLs**: `http://localhost:3000`
+   - **Allowed Web Origins**: `http://localhost:3000`
+4. Go to **Advanced Setting** section:
+   - Allow API with identifier: `http://localhost:5000`
+   - Enable `RS256` signing algorithm
+5. Update `.env` files accordingly with `Client ID`, `Domain`, and `Audience`
+
+---
 
 ## Environment Variables
 
