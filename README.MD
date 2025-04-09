@@ -1,10 +1,10 @@
-# 🔐 Auth0 Email Notification App
+# Auth0 Email Notification App
 
 A full-stack project using **Next.js 15 + Auth0** for authentication and **Node.js + Express** for backend logic to send a user their JWT token via email after login.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 root/
@@ -25,9 +25,9 @@ root/
 ---
 
 
-## ⚙️ Environment Variables
+## Environment Variables
 
-### ✅ Frontend (`frontend/.env`)
+### Frontend (`frontend/.env`)
 ```env
 NEXT_PUBLIC_AUTH0_DOMAIN=dev-g5mwwnoswygbm18r.us.auth0.com
 NEXT_PUBLIC_AUTH0_CLIENT_ID=XD2Wkw3cHCMIv1Fu9HaRA3x2h3gIr7SN
@@ -35,25 +35,25 @@ NEXT_PUBLIC_AUTH0_CALLBACK=http://localhost:3000/callback
 NEXT_PUBLIC_AUTH0_AUDIENCE=http://localhost:5000
 ```
 
-### ✅ Backend (`backend/.env`)
+### Backend (`backend/.env`)
 ```env
 AUTH0_DOMAIN=dev-g5mwwnoswygbm18r.us.auth0.com
 EMAIL_USERNAME=panthera.sapiens0@gmail.com
 EMAIL_PASSWORD=your_app_password_here
 ```
-> 🛡️ *Use an App Password for Gmail and never commit `.env` files.*
+> *Use an App Password for Gmail and never commit `.env` files.*
 
 ---
-## 🔧 Setup Instructions (Manual)
+## Setup Instructions (Manual)
 
-### 📦 Backend Setup
+### Backend Setup
 ```bash
 cd backend
 npm install
 npm start
 ```
 
-### 💻 Frontend Setup
+### Frontend Setup
 ```bash
 cd frontend
 npm install
@@ -61,7 +61,7 @@ npm run dev
 ```
 ---
 
-## 🐳 Docker-Based Setup (Recommended)
+## Docker-Based Setup (Recommended)
 
 ### Step 1: Run with Docker Compose
 From the root directory:
@@ -79,7 +79,7 @@ docker-compose down
 
 ---
 
-## 📬 Tech Stack
+## Tech Stack
 - Frontend: Next.js 15, React 19, TailwindCSS
 - Backend: Express.js, Node.js
 - Auth: Auth0 (OAuth2)
@@ -88,7 +88,7 @@ docker-compose down
 
 ---
 
-## ✅ Demo Flow
+## Demo Flow
 
 1. User logs in using Auth0
 2. Auth0 redirects to `/callback`
@@ -98,7 +98,7 @@ docker-compose down
 
 ---
 
-## 📬 Example Email
+## Example Email
 ```
 Subject: Your Login Token
 Body:
@@ -108,7 +108,7 @@ Here is your authentication token:
 
 ---
 
-## 🧠 Future Improvements
+## Future Improvements
 - Add database to store login history
 - Add user-friendly email template
 - Add error UI for failed login/token/email
@@ -116,7 +116,7 @@ Here is your authentication token:
 
 ---
 
-## 🛠️ Built With
+## Built With
 - [Next.js 15](https://nextjs.org/)
 - [Auth0](https://auth0.com/)
 - [Node.js](https://nodejs.org/)
@@ -125,5 +125,5 @@ Here is your authentication token:
 - [TailwindCSS](https://tailwindcss.com/)
 
 ---
-Made with ❤️ using Auth0 + Next.js + Express + Node.js
-> ✨ Maintained by Anand - 2025
+
+> Maintained by Anand - 2025
