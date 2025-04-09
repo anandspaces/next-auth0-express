@@ -3,10 +3,11 @@
 import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CallbackPage() {
   const { isLoading, getAccessTokenSilently, user } = useAuth0();
-
+  const router = useRouter()
   useEffect(() => {
     const sendToken = async () => {
       const token = await getAccessTokenSilently();
@@ -20,15 +21,15 @@ export default function CallbackPage() {
       });
     };
 
-    if (!isLoading) sendToken();
+    if (!isLoading) {
+      sendToken();
+      router.push("/");
+    }
   }, [isLoading]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-
-  <Link href="/" className="bg-blue-500 px-6 py-2 rounded text-white">
-    Go Back to Home
-  </Link>
+      <p>Redirecting...</p>
     </div>
-);
+  );
 }

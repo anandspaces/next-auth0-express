@@ -7,17 +7,23 @@ A full-stack project using **Next.js 15 + Auth0** for authentication and **Node.
 ## 📁 Project Structure
 
 ```
-project-root/
+root/
 ├── backend/
-│   └── src/
-│       └── index.js
+│   ├── src/
+│   ├── .env
+│   ├── Dockerfile
+│   └── ...
 ├── frontend/
-│   └── (Next.js 15 project)
-├── README.md
-└── .env (see below)
+│   ├── src/
+│   ├── .env
+│   ├── Dockerfile
+│   └── ...
+├── docker-compose.yml
+└── README.md
 ```
 
 ---
+
 
 ## ⚙️ Environment Variables
 
@@ -38,51 +44,47 @@ EMAIL_PASSWORD=your_app_password_here
 > 🛡️ *Use an App Password for Gmail and never commit `.env` files.*
 
 ---
+## 🔧 Setup Instructions (Manual)
 
-## 🧩 Frontend Setup
-
-### 📦 Dependencies
-```
-cd frontend
-npm install
-```
-
-### 🚀 Development
-```
-npm run dev
-```
-
-### 🔐 Auth Flow
-- Auth handled with `@auth0/auth0-react`
-- On login success, token and email are sent to backend `/auth/callback`
-- Backend validates token and sends an email with the token
-- After success, frontend redirects to homepage (`/`)
-
----
-
-## 🔧 Backend Setup
-
-### 📦 Dependencies
-```
+### 📦 Backend Setup
+```bash
 cd backend
 npm install
-```
-
-### 🚀 Start Backend
-```
 npm start
 ```
 
-### 📮 API Route: `/auth/callback`
-- Expects `{ token, email }` in POST body
-- Verifies token with Auth0's `/userinfo` endpoint
-- Sends email with token to the user
+### 💻 Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+---
+
+## 🐳 Docker-Based Setup (Recommended)
+
+### Step 1: Run with Docker Compose
+From the root directory:
+```bash
+docker-compose up --build
+```
+
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend: [http://localhost:5000](http://localhost:5000)
+
+### Optional: Stop and Remove Containers
+```bash
+docker-compose down
+```
 
 ---
 
-## 💌 Email Setup
-- Nodemailer is configured to use Gmail SMTP
-- Ensure [Less Secure App Access](https://myaccount.google.com/security) is enabled **or** use **App Password** if 2FA is on
+## 📬 Tech Stack
+- Frontend: Next.js 15, React 19, TailwindCSS
+- Backend: Express.js, Node.js
+- Auth: Auth0 (OAuth2)
+- Email: Nodemailer (Gmail SMTP)
+- Docker: Containerization using `Dockerfile` + `docker-compose`
 
 ---
 
@@ -123,6 +125,5 @@ Here is your authentication token:
 - [TailwindCSS](https://tailwindcss.com/)
 
 ---
-
+Made with ❤️ using Auth0 + Next.js + Express + Node.js
 > ✨ Maintained by Anand - 2025
-
